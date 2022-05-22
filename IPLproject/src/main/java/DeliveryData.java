@@ -7,6 +7,9 @@ public class DeliveryData {
     private String batting_team;
 
     private String bowler;
+
+    private String total_runs;
+
     private String bowling_team;
 
     public String getExtra_runs()
@@ -48,5 +51,13 @@ public class DeliveryData {
 
     public void setBowler(String bowler) {
         this.bowler = bowler;
+    }
+
+    public String getTotal_runs() {
+        return total_runs;
+    }
+
+    public void setTotal_runs(String total_runs) {
+        this.total_runs = total_runs;
     }
 }

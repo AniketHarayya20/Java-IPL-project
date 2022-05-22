@@ -5,13 +5,10 @@ public class MatchData {
 
     private String toss_winner;
 
-
     private String id;
-
 
     public String getSeason()
     {
-
         return season;
     }
 
@@ -22,6 +19,7 @@ public class MatchData {
     }
 
     public String getWinner()
+
     {
         return winner;
     }

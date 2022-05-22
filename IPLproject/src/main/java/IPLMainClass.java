@@ -12,12 +12,17 @@ public class IPLMainClass {
     private static  int batting_team=2;
     private static int bowling_team=3;
     private static int toss_winner=7;
+
+    public static int bowler=8;
+
+    public static int total_runs=17;
     public static void main (String []args) {
         List<DeliveryData> deliveries =new ArrayList<>();
         List<MatchData> matches = new ArrayList<>();
         Scenario1 s1= new Scenario1();
         Scenario2 s2= new Scenario2();
         Scenario3 s3= new Scenario3();
+        Scenario4 s4= new Scenario4();
         Scenario5 s5 = new Scenario5();
         try {
             FileReader fr1 = new FileReader("src/main/java/deliveries.csv");
@@ -30,6 +35,8 @@ public class IPLMainClass {
                 delivery.setBatting_team(data[batting_team]);
                 delivery.setMatch_id(data[match_id]);
                 delivery.setBowling_team(data[bowling_team]);
+                delivery.setTotal_runs(data[total_runs]);
+                delivery.setBowler(data[bowler]);
                 deliveries.add(delivery);
             }
             fr1.close();
@@ -60,6 +67,7 @@ public class IPLMainClass {
         System.out.println(s1.totalMatchesPlayedPerYear(matches));
         System.out.println(s2.matcheWonAllteams(matches));
         System.out.println(s3.extraRunsPerTeam(matches,deliveries));
+        System.out.println(s4.EconomicalBowler(matches,deliveries));
         System.out.println(s5.WinbatWinBall(matches));
     }
 }
